@@ -12,13 +12,13 @@
 
 #include "Cat.hpp"
 
-Cat::Cat(void)
+Cat::Cat(void) : Animal()
 {
 	std::cout << "Cat : Default constructor called" << std::endl;
 	_type = "Cat";
 }
 
-Cat::Cat(const Cat& x)
+Cat::Cat(const Cat& x) : Animal(x)
 {
 	std::cout << "Cat : Copy constructor called" << std::endl;	
 	*this = x;
@@ -28,7 +28,7 @@ Cat& Cat::operator=(const Cat& x)
 {
 	std::cout << "Cat : Copy assignment operator called" << std::endl;
 	if (this != &x)
-		_type = x._type;
+		Animal::operator=(x);
 	return (*this);	
 }
 

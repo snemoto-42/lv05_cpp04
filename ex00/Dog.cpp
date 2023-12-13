@@ -12,13 +12,13 @@
 
 #include "Dog.hpp"
 
-Dog::Dog(void)
+Dog::Dog(void) : Animal()
 {
 	std::cout << "Dog : Default constructor called" << std::endl;	
 	_type = "Dog";
 }
 
-Dog::Dog(const Dog& x)
+Dog::Dog(const Dog& x) : Animal(x)
 {
 	std::cout << "Dog : Copy constructor called" << std::endl;	
 	*this = x;
@@ -28,7 +28,7 @@ Dog& Dog::operator=(const Dog& x)
 {
 	std::cout << "Dog : Copy assignment operator called" << std::endl;
 	if (this != &x)
-		_type = x._type;
+		Animal::operator=(x);
 	return (*this);	
 }
 

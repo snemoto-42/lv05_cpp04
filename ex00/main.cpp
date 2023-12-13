@@ -18,7 +18,7 @@
 
 int main()
 {
-	std::cout << "<<< Sample test start >>>" << std::endl;
+	std::cout << "\n<<< Sample test >>>" << std::endl;
 	{
 		const Animal* meta = new Animal();
 		const Animal* j = new Dog();
@@ -35,8 +35,19 @@ int main()
 		delete j;
 		delete i;
 	}
-	std::cout << "<<< My test start >>>" << std::endl;
-	std::cout << "--- for WrongAnimal---" << std::endl;
+	std::cout << "\n<<< My test >>>" << std::endl;
+	std::cout << "\n--- for Copy ---" << std::endl;
+	{
+		const Dog* original = new Dog();
+		const Dog* copied = new Dog(*original);
+
+		std::cout << copied->getType() << std::endl;
+		copied->makeSound();
+
+		delete original;
+		delete copied;
+	}
+	std::cout << "\n--- for WrongAnimal---" << std::endl;
 	{
 		const WrongAnimal* meta = new WrongAnimal();
 		const WrongAnimal* i = new WrongCat();
@@ -49,6 +60,17 @@ int main()
 		delete meta;
 		delete i;
 
+	}
+	std::cout << "\n--- for Copy ---" << std::endl;
+	{
+		const WrongCat* original = new WrongCat();
+		const WrongCat* copied = new WrongCat(*original);
+
+		std::cout << copied->getType() << std::endl;
+		copied->makeSound();
+
+		delete original;
+		delete copied;
 	}
 	return 0;
 }
