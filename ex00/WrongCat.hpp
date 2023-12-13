@@ -1,43 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Animal.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snemoto <snemoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:48:30 by snemoto           #+#    #+#             */
-/*   Updated: 2023/10/15 17:05:47 by snemoto          ###   ########.fr       */
+/*   Updated: 2023/10/15 17:05:49 by snemoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#pragma once
+#ifndef __WRONG_CAT_HPP__
+#define __WRONG_CAT_HPP__
 
-Dog::Dog(void)
-{
-	std::cout << "Dog : Default constructor called" << std::endl;	
-	_type = "Dog";
-}
+#include "WrongAnimal.hpp"
 
-Dog::Dog(const Dog& x)
+class WrongCat : public WrongAnimal
 {
-	std::cout << "Dog : Copy constructor called" << std::endl;	
-	*this = x;
-}
+	public:
+		WrongCat( void );
+		WrongCat( const WrongCat& );
+		WrongCat& operator=( const WrongCat& );
+		virtual ~WrongCat( void );
 
-Dog& Dog::operator=(const Dog& x)
-{
-	std::cout << "Dog : Copy assignment operator called" << std::endl;
-	if (this != &x)
-		_type = x._type;
-	return (*this);	
-}
+		virtual void	makeSound( void ) const;
+};
 
-Dog::~Dog(void)
-{
-	std::cout << "Dog : Destructor called" << std::endl;	
-}
-
-void	Dog::makeSound(void) const
-{
-	std::cout << "Bow wow!!!!" << std::endl;	
-}
+#endif /* __WRONG_CAT_HPP__ */

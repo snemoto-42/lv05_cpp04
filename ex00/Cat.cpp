@@ -14,24 +14,30 @@
 
 Cat::Cat(void)
 {
-	std::cout << "Cat : Default constructor called\n";	
+	std::cout << "Cat : Default constructor called" << std::endl;
+	_type = "Cat";
 }
 
 Cat::Cat(const Cat& x)
 {
-	std::cout << "Cat : Copy constructor called\n";	
+	std::cout << "Cat : Copy constructor called" << std::endl;	
 	*this = x;
 }
 
 Cat& Cat::operator=(const Cat& x)
 {
-	std::cout << "Cat : Copy assignment operator called\n";
+	std::cout << "Cat : Copy assignment operator called" << std::endl;
 	if (this != &x)
-		Cat();
+		_type = x._type;
 	return (*this);	
 }
 
 Cat::~Cat(void)
 {
-	std::cout << "Cat : Destructor called\n";	
+	std::cout << "Cat : Destructor called" << std::endl;	
+}
+
+void	Cat::makeSound(void) const
+{
+	std::cout << "Meow!!!!" << std::endl;	
 }

@@ -12,36 +12,36 @@
 
 #include "Animal.hpp"
 
-Animal::Animal(void)
+Animal::Animal(void) : _type("default")
 {
-	std::cout << "Animal : Default constructor called\n";	
+	std::cout << "Animal : Default constructor called" << std::endl;
 }
 
 Animal::Animal(const Animal& x)
 {
-	std::cout << "Animal : Copy constructor called\n";	
+	std::cout << "Animal : Copy constructor called" << std::endl;	
 	*this = x;
 }
 
 Animal& Animal::operator=(const Animal& x)
 {
-	std::cout << "Animal : Copy assignment operator called\n";
+	std::cout << "Animal : Copy assignment operator called" << std::endl;
 	if (this != &x)
-		Animal();
+		_type = x._type;
 	return (*this);	
 }
 
 Animal::~Animal(void)
 {
-	std::cout << "Animal : Destructor called\n";	
+	std::cout << "Animal : Destructor called" << std::endl;	
 }
 
-const std::string&	Animal::getType(void)
+const std::string&	Animal::getType(void) const
 {
 	return (_type);
 }
 
-void				Animal::makeSound(void)
+void	Animal::makeSound(void) const
 {
-	std::cout << "Animal : makeSound function called\n";	
+	std::cout << "No animal aroud here" << std::endl;	
 }

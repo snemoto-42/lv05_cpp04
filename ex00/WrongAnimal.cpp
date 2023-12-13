@@ -10,34 +10,38 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongAnimal.hpp"
 
-Dog::Dog(void)
+WrongAnimal::WrongAnimal(void) : _type("default")
 {
-	std::cout << "Dog : Default constructor called" << std::endl;	
-	_type = "Dog";
+	std::cout << "WrongAnimal : Default constructor called" << std::endl;	
 }
 
-Dog::Dog(const Dog& x)
+WrongAnimal::WrongAnimal(const WrongAnimal& x)
 {
-	std::cout << "Dog : Copy constructor called" << std::endl;	
+	std::cout << "WrongAnimal : Copy constructor called" << std::endl;	
 	*this = x;
 }
 
-Dog& Dog::operator=(const Dog& x)
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& x)
 {
-	std::cout << "Dog : Copy assignment operator called" << std::endl;
+	std::cout << "WrongAnimal : Copy assignment operator called" << std::endl;
 	if (this != &x)
 		_type = x._type;
 	return (*this);	
 }
 
-Dog::~Dog(void)
+WrongAnimal::~WrongAnimal(void)
 {
-	std::cout << "Dog : Destructor called" << std::endl;	
+	std::cout << "WrongAnimal : Destructor called" << std::endl;	
 }
 
-void	Dog::makeSound(void) const
+const std::string&	WrongAnimal::getType(void) const
 {
-	std::cout << "Bow wow!!!!" << std::endl;	
+	return (_type);
+}
+
+void	WrongAnimal::makeSound(void) const
+{
+	std::cout << "No wrong animal aroud here" << std::endl;	
 }

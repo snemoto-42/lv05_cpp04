@@ -10,34 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-Dog::Dog(void)
+WrongCat::WrongCat(void)
 {
-	std::cout << "Dog : Default constructor called" << std::endl;	
-	_type = "Dog";
+	std::cout << "WrongCat : Default constructor called" << std::endl;
+	_type = "WrongCat";
 }
 
-Dog::Dog(const Dog& x)
+WrongCat::WrongCat(const WrongCat& x)
 {
-	std::cout << "Dog : Copy constructor called" << std::endl;	
+	std::cout << "WrongCat : Copy constructor called" << std::endl;	
 	*this = x;
 }
 
-Dog& Dog::operator=(const Dog& x)
+WrongCat& WrongCat::operator=(const WrongCat& x)
 {
-	std::cout << "Dog : Copy assignment operator called" << std::endl;
+	std::cout << "WrongCat : Copy assignment operator called" << std::endl;
 	if (this != &x)
 		_type = x._type;
 	return (*this);	
 }
 
-Dog::~Dog(void)
+WrongCat::~WrongCat(void)
 {
-	std::cout << "Dog : Destructor called" << std::endl;	
+	std::cout << "WrongCat : Destructor called" << std::endl;	
 }
 
-void	Dog::makeSound(void) const
+void	WrongCat::makeSound(void) const
 {
-	std::cout << "Bow wow!!!!" << std::endl;	
+	std::cout << "I'm saying Meow!!!!" << std::endl;	
 }

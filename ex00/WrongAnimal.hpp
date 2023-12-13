@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Animal.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snemoto <snemoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:48:30 by snemoto           #+#    #+#             */
-/*   Updated: 2023/10/15 17:05:47 by snemoto          ###   ########.fr       */
+/*   Updated: 2023/10/15 17:05:49 by snemoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#pragma once
+#ifndef __WRONG_ANIMAL_HPP__
+#define __WRONG_ANIMAL_HPP__
 
-Dog::Dog(void)
-{
-	std::cout << "Dog : Default constructor called" << std::endl;	
-	_type = "Dog";
-}
+#include <iostream>
 
-Dog::Dog(const Dog& x)
+class WrongAnimal
 {
-	std::cout << "Dog : Copy constructor called" << std::endl;	
-	*this = x;
-}
+	public:
+		WrongAnimal( void );
+		WrongAnimal( const WrongAnimal& );
+		WrongAnimal& operator=( const WrongAnimal& );
+		virtual ~WrongAnimal( void );
 
-Dog& Dog::operator=(const Dog& x)
-{
-	std::cout << "Dog : Copy assignment operator called" << std::endl;
-	if (this != &x)
-		_type = x._type;
-	return (*this);	
-}
+		const std::string&	getType( void ) const;
+		virtual void		makeSound( void ) const;
 
-Dog::~Dog(void)
-{
-	std::cout << "Dog : Destructor called" << std::endl;	
-}
+	protected:
+		std::string	_type;
 
-void	Dog::makeSound(void) const
-{
-	std::cout << "Bow wow!!!!" << std::endl;	
-}
+};
+
+#endif /* __WRONG_ANIMAL_HPP__ */

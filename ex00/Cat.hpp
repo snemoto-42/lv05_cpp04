@@ -24,6 +24,7 @@ class Cat : public Animal
 		Cat& operator=( const Cat& );
 		virtual ~Cat( void );
 
+		virtual void	makeSound( void ) const;
 };
 
 #endif /* __CAT_HPP__ */

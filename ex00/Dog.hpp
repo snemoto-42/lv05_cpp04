@@ -24,6 +24,8 @@ class Dog : public Animal
 		Dog& operator=( const Dog& );
 		virtual ~Dog( void );
 
+		virtual void	makeSound( void ) const;
+
 };
 
 #endif /* __DOG_HPP__ */
