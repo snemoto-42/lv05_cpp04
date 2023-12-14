@@ -6,7 +6,7 @@
 /*   By: snemoto <snemoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:48:30 by snemoto           #+#    #+#             */
-/*   Updated: 2023/12/14 22:34:50 by snemoto          ###   ########.fr       */
+/*   Updated: 2023/12/14 22:58:59 by snemoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,15 +89,15 @@ int main()
 	}
 	std::cout << "\n--- for WrongAnimal---" << std::endl;
 	{
-		const WrongAnimal* meta = new WrongAnimal();
+		// const WrongAnimal* meta = new WrongAnimal();
 		const WrongAnimal* i = new WrongCat();
 
 		std::cout << i->getType() << " " << std::endl;
 
 		i->makeSound();
-		meta->makeSound();
+		// meta->makeSound();
 
-		delete meta;
+		// delete meta;
 		delete i;
 
 	}

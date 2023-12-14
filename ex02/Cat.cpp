@@ -6,7 +6,7 @@
 /*   By: snemoto <snemoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:48:30 by snemoto           #+#    #+#             */
-/*   Updated: 2023/12/14 22:43:37 by snemoto          ###   ########.fr       */
+/*   Updated: 2023/12/14 22:54:57 by snemoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,15 @@ Cat& Cat::operator=(const Cat& x)
 	if (this != &x)
 	{
 		Animal::operator=(x);
-		_brain = new Brain(*x._brain);
+		try
+		{
+			_brain = new Brain(*x._brain);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+			std::exit(1);
+		}
 	}
 	return (*this);	
 }
