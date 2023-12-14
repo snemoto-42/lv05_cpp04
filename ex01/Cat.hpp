@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snemoto <snemoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:48:30 by snemoto           #+#    #+#             */
-/*   Updated: 2023/12/14 19:50:47 by snemoto          ###   ########.fr       */
+/*   Updated: 2023/12/14 22:01:46 by snemoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __ANIMAL_HPP__
-#define __ANIMAL_HPP__
+#ifndef __CAT_HPP__
+#define __CAT_HPP__
 
-#define RESET   "\033[0m"
-#define RED     "\033[31m"      /* Red */
-#define GREEN   "\033[32m"      /* Green */
-#define CYAN    "\033[36m"      /* Cyan */
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-#include <iostream>
-
-class Animal
+class Cat : public Animal
 {
 	public:
-		Animal( void );
-		Animal( const Animal& );
-		Animal& operator=( const Animal& );
-		virtual ~Animal( void );
+		Cat( void );
+		Cat( const std::string& );
+		Cat( const Cat& );
+		Cat& operator=( const Cat& );
+		virtual ~Cat( void );
 
-		const std::string&	getType( void ) const;
-		virtual void		makeSound( void ) const;
+		virtual void	makeSound( void ) const;
+		void			announceBrainIdea( void ) const;
 
-	protected:
-		std::string	_type;
-
+	private:
+		Brain*	_brain;
 };
 
-#endif /* __ANIMAL_HPP__ */
+#endif /* __CAT_HPP__ */
