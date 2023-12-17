@@ -6,7 +6,7 @@
 /*   By: snemoto <snemoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:48:30 by snemoto           #+#    #+#             */
-/*   Updated: 2023/12/14 22:54:57 by snemoto          ###   ########.fr       */
+/*   Updated: 2023/12/17 12:16:20 by snemoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,9 @@ void	Cat::makeSound(void) const
 void	Cat::announceBrainIdea(void) const
 {
 	_brain->announce();
+}
+
+void	Cat::setBrainIdea(const std::string str)
+{
+	_brain->setIdeas(str);
 }

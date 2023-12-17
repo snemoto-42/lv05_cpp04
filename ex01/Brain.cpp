@@ -6,7 +6,7 @@
 /*   By: snemoto <snemoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:48:30 by snemoto           #+#    #+#             */
-/*   Updated: 2023/12/14 22:11:40 by snemoto          ###   ########.fr       */
+/*   Updated: 2023/12/17 12:13:13 by snemoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,10 @@ void	Brain::announce(void) const
 {
 	for (unsigned int idx = 0; idx < 100; idx++)
 		std::cout << _ideas[idx] << std::endl;
+}
+
+void	Brain::setIdeas(const std::string str)
+{
+	for (unsigned int idx = 0; idx < 100; idx++)
+		_ideas[idx] = str;
 }

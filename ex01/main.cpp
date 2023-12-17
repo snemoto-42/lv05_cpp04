@@ -6,7 +6,7 @@
 /*   By: snemoto <snemoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:48:30 by snemoto           #+#    #+#             */
-/*   Updated: 2023/12/14 23:05:16 by snemoto          ###   ########.fr       */
+/*   Updated: 2023/12/17 12:37:23 by snemoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,17 @@ int main()
 	}
 	std::cout << "\n--- for Copy Dog ---" << std::endl;
 	{
-		const Dog* originalDog = new Dog("Original Dog Idea");
+		Dog* originalDog = new Dog("Original Dog Idea");
 		originalDog->announceBrainIdea();
 
 		const Dog* copiedDog = new Dog(*originalDog);
+		copiedDog->announceBrainIdea();
+
+		std::cout << "\n--- differences between Edited original and copied ---" << std::endl;
+		originalDog->setBrainIdea("Edited Dogs");
+		std::cout << "\n--- original ---" << std::endl;
+		originalDog->announceBrainIdea();
+		std::cout << "\n--- copied ---" << std::endl;
 		copiedDog->announceBrainIdea();
 
 		delete originalDog;
@@ -52,10 +59,17 @@ int main()
 	}
 	std::cout << "\n--- for Copy Cat ---" << std::endl;
 	{
-		const Cat* originalCat = new Cat("Original Cat Idea");
+		Cat* originalCat = new Cat("Original Cat Idea");
 		originalCat->announceBrainIdea();
 
 		const Cat* copiedCat = new Cat(*originalCat);
+		copiedCat->announceBrainIdea();
+
+		std::cout << "\n--- differences between Edited original and copied ---" << std::endl;
+		originalCat->setBrainIdea("Edited Cats");
+		std::cout << "\n--- original ---" << std::endl;
+		originalCat->announceBrainIdea();
+		std::cout << "\n--- copied ---" << std::endl;
 		copiedCat->announceBrainIdea();
 
 		delete originalCat;
@@ -71,9 +85,9 @@ int main()
 		std::cout << j->getType() << " " << std::endl;
 		std::cout << i->getType() << " " << std::endl;
 
-		i->makeSound();
-		j->makeSound();
 		meta->makeSound();
+		j->makeSound();
+		i->makeSound();
 
 		delete meta;
 		delete j;
@@ -100,6 +114,9 @@ int main()
 
 		i->makeSound();
 		meta->makeSound();
+
+		WrongCat cat;
+		cat.makeSound();
 
 		delete meta;
 		delete i;

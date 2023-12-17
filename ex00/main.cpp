@@ -6,7 +6,7 @@
 /*   By: snemoto <snemoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:48:30 by snemoto           #+#    #+#             */
-/*   Updated: 2023/12/14 22:25:30 by snemoto          ###   ########.fr       */
+/*   Updated: 2023/12/17 12:37:38 by snemoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int main()
 		std::cout << j->getType() << " " << std::endl;
 		std::cout << i->getType() << " " << std::endl;
 
-		i->makeSound();
-		j->makeSound();
 		meta->makeSound();
+		j->makeSound();
+		i->makeSound();
 
 		delete meta;
 		delete j;
@@ -57,6 +57,9 @@ int main()
 
 		i->makeSound();
 		meta->makeSound();
+
+		WrongCat cat;
+		cat.makeSound();
 
 		delete meta;
 		delete i;

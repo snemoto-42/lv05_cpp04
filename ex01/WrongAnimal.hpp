@@ -6,7 +6,7 @@
 /*   By: snemoto <snemoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:48:30 by snemoto           #+#    #+#             */
-/*   Updated: 2023/12/14 19:51:02 by snemoto          ###   ########.fr       */
+/*   Updated: 2023/12/17 12:23:00 by snemoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ class WrongAnimal
 		WrongAnimal( void );
 		WrongAnimal( const WrongAnimal& );
 		WrongAnimal& operator=( const WrongAnimal& );
-		virtual ~WrongAnimal( void );
+		~WrongAnimal( void );
 
 		const std::string&	getType( void ) const;
-		virtual void		makeSound( void ) const;
+		void		makeSound( void ) const;
 
 	protected:
 		std::string	_type;

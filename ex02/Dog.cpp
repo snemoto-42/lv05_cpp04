@@ -6,7 +6,7 @@
 /*   By: snemoto <snemoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:48:30 by snemoto           #+#    #+#             */
-/*   Updated: 2023/12/14 22:55:25 by snemoto          ###   ########.fr       */
+/*   Updated: 2023/12/17 12:28:08 by snemoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,9 @@ void	Dog::makeSound(void) const
 void	Dog::announceBrainIdea(void) const
 {
 	_brain->announce();
+}
+
+void	Dog::setBrainIdea(const std::string str)
+{
+	_brain->setIdeas(str);
 }

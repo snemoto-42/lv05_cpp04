@@ -6,7 +6,7 @@
 /*   By: snemoto <snemoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:48:30 by snemoto           #+#    #+#             */
-/*   Updated: 2023/12/14 21:46:04 by snemoto          ###   ########.fr       */
+/*   Updated: 2023/12/17 12:12:25 by snemoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Brain
 		virtual ~Brain( void );
 
 		void	announce( void ) const;
+		void	setIdeas( const std::string );
 
 	private:
 		std::string	_ideas[100];

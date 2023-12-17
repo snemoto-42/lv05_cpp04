@@ -6,7 +6,7 @@
 /*   By: snemoto <snemoto@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:48:30 by snemoto           #+#    #+#             */
-/*   Updated: 2023/12/14 22:01:46 by snemoto          ###   ########.fr       */
+/*   Updated: 2023/12/17 12:16:16 by snemoto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Cat : public Animal
 
 		virtual void	makeSound( void ) const;
 		void			announceBrainIdea( void ) const;
+		void			setBrainIdea( const std::string );
 
 	private:
 		Brain*	_brain;
